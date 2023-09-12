@@ -199,17 +199,33 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 const Object = require('Object');
 const copyFromWindow = require('copyFromWindow');
 const callInWindow = require('callInWindow');
+const log = require('logToConsole');
 
-const payload = {usermeta: {}};
-const unwantedKeys = ['cart', 'cartObjectIdVarName', 'cartObjectQuantityVarName', 'cartObjectPriceVarName', 'cartObjectSkuVarName', 'gtmEventId', 'gtmOnFailure', 'gtmOnSuccess', 'gtmTagId'];
-const dataKeys = Object.keys(data).filter((key) => unwantedKeys.indexOf(key) === -1);
+log('Page load event');
 
-for (let i = 0; i < dataKeys.length; i++) {
-  const currentKey = dataKeys[i];
-  if (currentKey !== 'cart' && currentKey !== 'cartObjectIdVar') {
-    payload.usermeta[dataKeys[i]] = data[dataKeys[i]];
+const payload = {
+  usermeta: {
+    language: data.language || null,
+    currency: data.currency || null,
+    customerid: data.customerid || null,
+    isloggedin: data.isloggedin || null,
+    customerpagetype: data.customerpagetype || null,
+    itemid: data.itemid || null,
+    sku: data.sku || null,
+    itemname: data.itemname || null,
+    itemprice: data.itemprice || null,
+    msrpprice: data.msrpprice || null,
+    itemsaleprice: data.itemsaleprice || null,
+    itemcategory: data.itemcategory || null,
+    itemsubcategory: data.itemsubcategory || null,
+    itemimages: data.itemimages || null,
+    itemfeaturedimage: data.itemfeaturedimage || null,
+    itemgender: data.itemgender || null,
+    itemvendor: data.itemvendor || null,
+    itembrand: data.itembrand || null,
+    cart: null
   }
-}
+};
 
 let cart;
 if (data.cart) {
@@ -374,6 +390,24 @@ ___WEB_PERMISSIONS___
       "isEditedByUser": true
     },
     "isRequired": true
+  },
+  {
+    "instance": {
+      "key": {
+        "publicId": "logging",
+        "versionId": "1"
+      },
+      "param": [
+        {
+          "key": "environments",
+          "value": {
+            "type": 1,
+            "string": "debug"
+          }
+        }
+      ]
+    },
+    "isRequired": true
   }
 ]
 
@@ -385,6 +419,6 @@ scenarios: []
 
 ___NOTES___
 
-Created on 8/31/2023, 3:16:56 PM
+Created on 9/12/2023, 12:19:12 PM
 
 
