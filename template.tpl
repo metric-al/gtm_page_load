@@ -199,9 +199,6 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 const Object = require('Object');
 const copyFromWindow = require('copyFromWindow');
 const callInWindow = require('callInWindow');
-const log = require('logToConsole');
-
-log('Page load event');
 
 const payload = {
   usermeta: {
@@ -390,24 +387,6 @@ ___WEB_PERMISSIONS___
       "isEditedByUser": true
     },
     "isRequired": true
-  },
-  {
-    "instance": {
-      "key": {
-        "publicId": "logging",
-        "versionId": "1"
-      },
-      "param": [
-        {
-          "key": "environments",
-          "value": {
-            "type": 1,
-            "string": "debug"
-          }
-        }
-      ]
-    },
-    "isRequired": true
   }
 ]
 
@@ -419,6 +398,6 @@ scenarios: []
 
 ___NOTES___
 
-Created on 9/12/2023, 12:19:12 PM
+Created on 9/12/2023, 12:38:25 PM
 
 
