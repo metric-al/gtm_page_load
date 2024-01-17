@@ -202,24 +202,24 @@ const callInWindow = require('callInWindow');
 
 const payload = {
   usermeta: {
-    language: data.language || null,
-    currency: data.currency || null,
-    customerid: data.customerid || null,
-    isloggedin: data.isloggedin || null,
-    customerpagetype: data.customerpagetype || null,
-    itemid: data.itemid || null,
-    sku: data.sku || null,
-    itemname: data.itemname || null,
-    itemprice: data.itemprice || null,
-    msrpprice: data.msrpprice || null,
-    itemsaleprice: data.itemsaleprice || null,
-    itemcategory: data.itemcategory || null,
-    itemsubcategory: data.itemsubcategory || null,
-    itemimages: data.itemimages || null,
-    itemfeaturedimage: data.itemfeaturedimage || null,
-    itemgender: data.itemgender || null,
-    itemvendor: data.itemvendor || null,
-    itembrand: data.itembrand || null,
+    language: data.language,
+    currency: data.currency,
+    customerid: data.customerid,
+    isloggedin: data.isloggedin,
+    customerpagetype: data.customerpagetype,
+    itemid: data.itemid,
+    sku: data.sku,
+    itemname: data.itemname,
+    itemprice: data.itemprice,
+    msrpprice: data.msrpprice,
+    itemsaleprice: data.itemsaleprice,
+    itemcategory: data.itemcategory,
+    itemsubcategory: data.itemsubcategory,
+    itemimages: data.itemimages,
+    itemfeaturedimage: data.itemfeaturedimage,
+    itemgender: data.itemgender,
+    itemvendor: data.itemvendor,
+    itembrand: data.itembrand,
     cart: null
   }
 };
@@ -398,6 +398,6 @@ scenarios: []
 
 ___NOTES___
 
-Created on 9/12/2023, 12:38:25 PM
+Created on 1/16/2024, 6:56:43 PM
 
 
